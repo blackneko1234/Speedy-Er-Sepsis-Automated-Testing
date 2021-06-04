@@ -10,9 +10,6 @@ public class CallWebElement {
     /*End MainPage*/
 
     /*DataPage*/
-    private static WebElement AssessIcon;
-    private static WebElement DiagnoseIcon;
-    private static WebElement TreatmentIcon;
     private static WebElement Time;
     private static WebElement FullName;
     private static WebElement HN;
@@ -48,7 +45,6 @@ public class CallWebElement {
     private static WebElement LactateAddButton;
     private static WebElement MapInputPopup1;
     private static WebElement MapInputPopup2;
-    private static WebElement SofaAndLactateInputPopup;
     private static WebElement PopupSubmit;
     private static WebElement PopupCancel;
     private static WebElement MapData;
@@ -75,11 +71,6 @@ public class CallWebElement {
     private static WebElement DischargeDisposition;
     private static WebElement AgainstDisposition;
     private static WebElement DeathDisposition;
-
-    /*Selected box*/
-    private static WebElement MaleOrYear;
-    private static WebElement FemaleOrMonth;
-    /*End Selected box*/
 
     /*End DataPage*/
 
@@ -131,11 +122,6 @@ public class CallWebElement {
         Submit = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div[3]/button"));
     }
 
-    public void CallWebElementSelectGenderOrYear(WebDriver driver) {
-        MaleOrYear = driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[1]"));
-        FemaleOrMonth = driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[2]"));
-    }
-
     public void CallWebElementEditPage(WebDriver driver) {
         Time = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/p/p/p"));
         FullName = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[1]/div[2]/div/div[1]/div/div/input"));
@@ -143,9 +129,6 @@ public class CallWebElement {
         Gender = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div/div/div"));
         Age = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[1]/div[2]/div/div[4]/div/div/input"));
         AgeUnit = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[1]/div[2]/div/div[5]/div/div/div"));
-        AssessIcon = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[1]/div[1]/span/span[1]"));
-        DiagnoseIcon = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[1]/div[2]/span/span[1]"));
-        TreatmentIcon = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[1]/div[3]/span/span[1]"));
     }
 
     public void CallWebElementAssessPage(WebDriver driver) {
@@ -212,11 +195,6 @@ public class CallWebElement {
         PopupSubmitAndCancel(driver);
     }
 
-    public void CallWebElementSofaAndLactatePopup(WebDriver driver) {
-        SofaAndLactateInputPopup = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/form/div[1]/div/div/div/input"));
-        PopupSubmitAndCancel(driver);
-    }
-
     public void CallWebElementTreatmentPageAfterAddData(WebDriver driver) {
         MapData = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div/div[2]/p"));
         SofaData = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[3]/div/div[2]/p"));
@@ -253,12 +231,12 @@ public class CallWebElement {
         return SelectFirstCard;
     }
 
-    public WebElement getMaleOrYear() {
-        return MaleOrYear;
+    public WebElement getMaleOrYear(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[1]"));
     }
 
-    public WebElement getFemaleOrMonth() {
-        return FemaleOrMonth;
+    public WebElement getFemaleOrMonth(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[2]"));
     }
 
     public WebElement getAddButton(WebDriver driver) {
@@ -357,16 +335,16 @@ public class CallWebElement {
         return MPEWorNEWS;
     }
 
-    public WebElement getAssessIcon() {
-        return AssessIcon;
+    public WebElement getAssessIcon(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[1]/div[1]/span/span[1]"));
     }
 
-    public WebElement getDiagnoseIcon() {
-        return DiagnoseIcon;
+    public WebElement getDiagnoseIcon(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[1]/div[2]/span/span[1]"));
     }
 
-    public WebElement getTreatmentIcon() {
-        return TreatmentIcon;
+    public WebElement getTreatmentIcon(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[1]/div[3]/span/span[1]"));
     }
 
     public WebElement getInfection() {
@@ -393,8 +371,9 @@ public class CallWebElement {
         return MapInputPopup2;
     }
 
-    public WebElement getSofaAndLactateInputPopup() {
-        return SofaAndLactateInputPopup;
+    public WebElement getSofaAndLactateInputPopup(WebDriver driver) {
+        PopupSubmitAndCancel(driver);
+        return driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/form/div[1]/div/div/div/input"));
     }
 
     public WebElement getPopupSubmit() {

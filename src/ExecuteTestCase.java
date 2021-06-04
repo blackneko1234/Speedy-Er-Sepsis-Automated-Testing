@@ -37,7 +37,7 @@ public class ExecuteTestCase {
             //AllTestCase.Test25();
             //AllTestCase.Test26();
             //AllTestCase.Test27();
-            AllTestCase.Test28();
+            //AllTestCase.Test28();
 
             /*==========End TestCase==========*/
 

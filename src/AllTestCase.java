@@ -114,14 +114,12 @@ public class AllTestCase {
             call.getHN().sendKeys("1234");
             call.getGender().click();
 
-            call.CallWebElementSelectGenderOrYear(driver);
-            call.getMaleOrYear().click();
+            call.getMaleOrYear(driver).click();
 
             call.getAge().sendKeys("999");
             call.getAgeUnit().click();
 
-            call.CallWebElementSelectGenderOrYear(driver);
-            call.getMaleOrYear().click();
+            call.getMaleOrYear(driver).click();
 
             call.getTemp().sendKeys("999");
             call.getPR().sendKeys("300");
@@ -187,14 +185,12 @@ public class AllTestCase {
                 call.getHN().sendKeys("1234");
                 call.getGender().click();
 
-                call.CallWebElementSelectGenderOrYear(driver);
-                call.getFemaleOrMonth().click();
+                call.getFemaleOrMonth(driver).click();
 
                 call.getAge().sendKeys("999");
                 call.getAgeUnit().click();
 
-                call.CallWebElementSelectGenderOrYear(driver);
-                call.getMaleOrYear().click();
+                call.getMaleOrYear(driver).click();
 
                 call.getTemp().sendKeys("999");
                 call.getPR().sendKeys("300");
@@ -286,8 +282,7 @@ public class AllTestCase {
                 call.CallWebElementAddPage(driver);
                 call.getAgeUnit().click();
 
-                call.CallWebElementSelectGenderOrYear(driver);
-                call.getMaleOrYear().click();
+                call.getMaleOrYear(driver).click();
 
                 call.getAge().sendKeys("99999");
                 if (call.getAge().getAttribute("value").equals("999")) {
@@ -298,8 +293,8 @@ public class AllTestCase {
                 call.getAge().clear();
 
                 call.getAgeUnit().click();
-                call.CallWebElementSelectGenderOrYear(driver);
-                call.getFemaleOrMonth().click();
+
+                call.getFemaleOrMonth(driver).click();
 
                 call.getAge().sendKeys("99999");
                 if (call.getAge().getAttribute("value").equals("12")) {
@@ -382,8 +377,8 @@ public class AllTestCase {
                 call.getAge().clear();
 
                 call.getAgeUnit().click();
-                call.CallWebElementSelectGenderOrYear(driver);
-                call.getFemaleOrMonth().click();
+
+                call.getFemaleOrMonth(driver).click();
 
                 call.getAge().sendKeys("-1000");
                 if (Integer.parseInt(call.getAge().getAttribute("value")) > 0) {
@@ -474,8 +469,8 @@ public class AllTestCase {
             }
 
             call.getAgeUnit().click();
-            call.CallWebElementSelectGenderOrYear(driver);
-            call.getFemaleOrMonth().click();
+
+            call.getFemaleOrMonth(driver).click();
 
             Shortcut.DeleteTextInTextBox(call.getAge());
             call.getAge().sendKeys("-100");
@@ -641,8 +636,8 @@ public class AllTestCase {
                 }
 
                 call.getAgeUnit().click();
-                call.CallWebElementSelectGenderOrYear(driver);
-                call.getFemaleOrMonth().click();
+
+                call.getFemaleOrMonth(driver).click();
 
                 Shortcut.DeleteTextInTextBox(call.getAge());
                 call.getAge().sendKeys("Test");
@@ -847,8 +842,7 @@ public class AllTestCase {
             Shortcut.DeleteTextInTextBox(call.getAge());
             call.getAgeUnit().click();
 
-            call.CallWebElementSelectGenderOrYear(driver);
-            call.getMaleOrYear().click();
+            call.getMaleOrYear(driver).click();
             call.getAge().sendKeys("Test");
             if (call.getAge().getAttribute("value").isEmpty()) {
                 logger.info("Pass: Age (Year) cannot enter alphabet");
@@ -858,8 +852,8 @@ public class AllTestCase {
             Shortcut.DeleteTextInTextBox(call.getAge());
 
             call.getAgeUnit().click();
-            call.CallWebElementSelectGenderOrYear(driver);
-            call.getFemaleOrMonth().click();
+
+            call.getFemaleOrMonth(driver).click();
             call.getAge().sendKeys("Test");
             if (call.getAge().getAttribute("value").isEmpty()) {
                 logger.info("Pass: Age (Month) cannot enter alphabet");
@@ -903,7 +897,7 @@ public class AllTestCase {
             Shortcut.getFirstCard(driver, call);
 
             call.CallWebElementEditPage(driver);
-            call.getAssessIcon().click();
+            call.getAssessIcon(driver).click();
             call.CallWebElementAssessPage(driver);
             if (!call.getTemp().getAttribute("Value").isEmpty()
                     && !call.getPR().getAttribute("Value").isEmpty()
@@ -979,16 +973,16 @@ public class AllTestCase {
             call.getHN().sendKeys("TestForTestCase19");
 
             call.getGender().click();
-            call.CallWebElementSelectGenderOrYear(driver);
-            call.getFemaleOrMonth().click();
+
+            call.getFemaleOrMonth(driver).click();
 
             call.CallWebElementEditPage(driver);
             Shortcut.DeleteTextInTextBox(call.getAge());
             call.getAge().sendKeys("10");
 
             call.getAgeUnit().click();
-            call.CallWebElementSelectGenderOrYear(driver);
-            call.getFemaleOrMonth().click();
+
+            call.getFemaleOrMonth(driver).click();
 
             call.CallWebElementDiagnosisPage(driver);
             Shortcut.DeleteTextInTextBox(call.getBP1());
@@ -1093,18 +1087,17 @@ public class AllTestCase {
             call.getSofaAddButton().click();
 
             logger.debug("========= Sofa =========");
-            call.CallWebElementSofaAndLactatePopup(driver);
-            Shortcut.DeleteTextInTextBox(call.getSofaAndLactateInputPopup());
+            Shortcut.DeleteTextInTextBox(call.getSofaAndLactateInputPopup(driver));
 
-            call.getSofaAndLactateInputPopup().sendKeys("Test");
-            if (Integer.parseInt(call.getSofaAndLactateInputPopup().getAttribute("Value")) == 0) {
+            call.getSofaAndLactateInputPopup(driver).sendKeys("Test");
+            if (Integer.parseInt(call.getSofaAndLactateInputPopup(driver).getAttribute("Value")) == 0) {
                 logger.info("Pass: Sofa input can be number only");
             } else {
                 logger.error("Fail: Sofa input can be alphabet");
             }
 
-            call.getSofaAndLactateInputPopup().sendKeys("-20");
-            if (Integer.parseInt(call.getSofaAndLactateInputPopup().getAttribute("Value")) > 0) {
+            call.getSofaAndLactateInputPopup(driver).sendKeys("-20");
+            if (Integer.parseInt(call.getSofaAndLactateInputPopup(driver).getAttribute("Value")) > 0) {
                 logger.info("Pass: Sofa input is positive");
             } else {
                 logger.error("Fail: Sofa input is negative");
@@ -1116,18 +1109,17 @@ public class AllTestCase {
             call.CallWebElementTreatmentPage(driver);
             call.getLactateAddButton().click();
 
-            call.CallWebElementSofaAndLactatePopup(driver);
-            Shortcut.DeleteTextInTextBox(call.getSofaAndLactateInputPopup());
+            Shortcut.DeleteTextInTextBox(call.getSofaAndLactateInputPopup(driver));
 
-            call.getSofaAndLactateInputPopup().sendKeys("Test");
-            if (Integer.parseInt(call.getSofaAndLactateInputPopup().getAttribute("Value")) == 0) {
+            call.getSofaAndLactateInputPopup(driver).sendKeys("Test");
+            if (Integer.parseInt(call.getSofaAndLactateInputPopup(driver).getAttribute("Value")) == 0) {
                 logger.info("Pass: Lactate input can be number only");
             } else {
                 logger.error("Fail: Lactate input can be alphabet");
             }
 
-            call.getSofaAndLactateInputPopup().sendKeys("-20");
-            if (Integer.parseInt(call.getSofaAndLactateInputPopup().getAttribute("Value")) > 0) {
+            call.getSofaAndLactateInputPopup(driver).sendKeys("-20");
+            if (Integer.parseInt(call.getSofaAndLactateInputPopup(driver).getAttribute("Value")) > 0) {
                 logger.info("Pass: Lactate input is positive");
             } else {
                 logger.error("Fail: Lactate input is negative");
@@ -1286,7 +1278,7 @@ public class AllTestCase {
             logger.debug("========= Click assess icon it will bring you back to assess page =========");
 
             call.CallWebElementEditPage(driver);
-            call.getAssessIcon().click();
+            call.getAssessIcon(driver).click();
             call.CallWebElementAssessPage(driver);
             if (!call.getTemp().getAttribute("Value").isEmpty()
                     && !call.getPR().getAttribute("Value").isEmpty()
@@ -1303,7 +1295,7 @@ public class AllTestCase {
             logger.debug("========= Click treat icon it will bring you back to treat page =========");
 
             call.CallWebElementEditPage(driver);
-            call.getTreatmentIcon().click();
+            call.getTreatmentIcon(driver).click();
             call.CallWebElementTreatmentPage(driver);
             if (call.getMapAddButton().isDisplayed()
                     && call.getSofaAddButton().isDisplayed()
@@ -1342,13 +1334,11 @@ public class AllTestCase {
             call.getAge().sendKeys("1234");
 
             call.getGender().click();
-            call.CallWebElementSelectGenderOrYear(driver);
-            call.getFemaleOrMonth().click();
+            call.getFemaleOrMonth(driver).click();
 
             call.CallWebElementEditPage(driver);
             call.getAgeUnit().click();
-            call.CallWebElementSelectGenderOrYear(driver);
-            call.getFemaleOrMonth().click();
+            call.getFemaleOrMonth(driver).click();
 
             call.CallWebElementEditPage(driver);
             Shortcut.DeleteTextInTextBox(call.getAge());
@@ -1449,7 +1439,7 @@ public class AllTestCase {
         WebDriver driver = new ChromeDriver(Shortcut.options());
         Shortcut.CallChromeDriver(driver, url);
         try {
-            
+
         } catch (Exception e) {
             logger.error("Case Fail!!!");
             Shortcut.DriverClose(logger, driver, 29);
