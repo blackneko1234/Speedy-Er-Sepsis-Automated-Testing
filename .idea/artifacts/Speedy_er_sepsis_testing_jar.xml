@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Speedy er sepsis testing:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Speedy_er_sepsis_testing_jar</output-path>
+    <root id="archive" name="Speedy er sepsis.jar">
+      <element id="module-output" name="Speedy er sepsis" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/byte-buddy-1.8.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/commons-io-2.8.0-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/client-combined-3.141.59-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/client-combined-3.141.59.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/commons-exec-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/log4j-1.2.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/MonteScreenRecorder.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/commons-io-2.8.0-test-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/okhttp-3.11.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/okio-1.14.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/commons-io-2.8.0-tests.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/commons-io-2.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/commons-io-2.8.0-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Library/guava-25.0-jre.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

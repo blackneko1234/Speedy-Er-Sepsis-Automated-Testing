@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="Library">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Library/byte-buddy-1.8.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/commons-io-2.8.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/client-combined-3.141.59-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/client-combined-3.141.59.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/commons-exec-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/MonteScreenRecorder.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/commons-io-2.8.0-test-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/okhttp-3.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/okio-1.14.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/commons-io-2.8.0-tests.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/commons-io-2.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/commons-io-2.8.0-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Library/guava-25.0-jre.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
