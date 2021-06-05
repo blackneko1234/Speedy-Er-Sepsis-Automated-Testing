@@ -3,11 +3,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class CallWebElement {
-    /*MainPage*/
-    private static WebElement SelectFirstCard;
-    private static WebElement PatientStatusBar;
-    private static WebElement MecritShow;
-    /*End MainPage*/
 
     /*DataPage*/
     private static WebElement Time;
@@ -23,71 +18,24 @@ public class CallWebElement {
     private static WebElement BP2;
     private static WebElement O2SAT;
     private static WebElement O2Th;
+    private static WebElement Submit;
     private static WebElement Fever;
     private static WebElement Suspected;
     private static WebElement History;
     private static WebElement Alert;
-    private static WebElement Submit;
     private static WebElement Voice;
     private static WebElement Pain;
     private static WebElement Unresponsive;
 
-    private static WebElement PatientStatus;
     private static WebElement MPEWorNEWS;
-    private static WebElement pMap;
     //Diagnose
     private static WebElement Infection;
     private static WebElement NotInfection;
-    private static WebElement FastTrack;
+
     //Treatment
-    private static WebElement MapAddButton;
-    private static WebElement SofaAddButton;
-    private static WebElement LactateAddButton;
-    private static WebElement MapInputPopup1;
-    private static WebElement MapInputPopup2;
     private static WebElement PopupSubmit;
     private static WebElement PopupCancel;
-    private static WebElement MapData;
-    private static WebElement MapDelete;
-    private static WebElement SofaData;
-    private static WebElement SofaDelete;
-    private static WebElement LactateData;
-    private static WebElement LactateDelete;
-    private static WebElement TreatTime;
-    private static WebElement Sepsis;
-    private static WebElement SepsisShock;
-    private static WebElement SepsisInduced;
-    private static WebElement CriticalCareNotification;
-    private static WebElement Antibiotic;
-    private static WebElement IVFluid;
-    private static WebElement LoadAdequateFluid;
-    private static WebElement Vasopressor;
-    private static WebElement Hydrocortisone;
-    private static WebElement Epinephrine;
-    private static WebElement Note;
-
-    private static WebElement AdmitTimeDisposition;
-    private static WebElement ReferDisposition;
-    private static WebElement DischargeDisposition;
-    private static WebElement AgainstDisposition;
-    private static WebElement DeathDisposition;
-
     /*End DataPage*/
-
-    public void CallWebElementDispositionPage(WebDriver driver) {
-        AdmitTimeDisposition = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[1]/div/div[1]/span/span[1]/input"));
-        ReferDisposition = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[3]/div/div[1]/span/span[1]/input"));
-        DischargeDisposition = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[5]/div/div[1]/span/span[1]/input"));
-        AgainstDisposition = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[7]/div/div[1]/span/span[1]/input"));
-        DeathDisposition = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[9]/div/div[1]/span/span[1]/input"));
-    }
-
-    public void CallWebElementMainPageAfterCreatedPatient(WebDriver driver) {
-        SelectFirstCard = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div[2]/div/div/div/div[1]/div"));
-        PatientStatus = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[7]/p"));
-        PatientStatusBar = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[7]/div/div[1]"));
-        MecritShow = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[6]/div"));
-    }
 
     public void CallWebElementAddPage(WebDriver driver) {
         //Time
@@ -161,86 +109,20 @@ public class CallWebElement {
         BP1 = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div/div/div[1]/div[2]/div[1]/div[2]/div/div[1]/div/div/input"));
         BP2 = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div/div/div[1]/div[2]/div[1]/div[2]/div/div[3]/div/div/input"));
         MPEWorNEWS = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div/div/div[1]/div[1]/div[1]/div[2]/div/div/input"));
-        pMap = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]/div/div/input"));
         Infection = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div[1]/button"));
         NotInfection = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div[2]/button"));
-        FastTrack = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div[2]/span"));
         Submit = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[2]/button"));
     }
 
     public void CallWebElementTreatmentPage(WebDriver driver) {
-        MapAddButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div/div/div/p[2]/button"));
-        SofaAddButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[3]/div/div/div/p[2]/button"));
-        LactateAddButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[4]/div/div/div/p[2]/button"));
         Submit = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[2]/button"));
-        TreatTime = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[1]/div[2]/p/p/p"));
         Infection = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[1]/button"));
         NotInfection = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[2]/button"));
-        Sepsis = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[3]/button"));
-        SepsisShock = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[4]/button"));
-        SepsisInduced = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[5]/button"));
-        CriticalCareNotification = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[6]/button"));
-        Antibiotic = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/p[2]/span/span[1]/input"));
-        IVFluid = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/p[2]/span/span[1]/input"));
-        LoadAdequateFluid = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[3]/p[2]/span/span[1]/input"));
-        Vasopressor = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[4]/p[2]/span/span[1]/input"));
-        Hydrocortisone = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[5]/p[2]/span/span[1]/input"));
-        Epinephrine = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[6]/p[2]/span/span[1]/input"));
-        Note = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[7]/div/div/div/textarea[1]"));
     }
-
-    public void CallWebElementMapPopup(WebDriver driver) {
-        MapInputPopup1 = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/form/div[1]/div/div/div[1]/div/input"));
-        MapInputPopup2 = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/form/div[1]/div/div/div[2]/div/input"));
-        PopupSubmitAndCancel(driver);
-    }
-
-    public void CallWebElementTreatmentPageAfterAddData(WebDriver driver) {
-        MapData = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div/div[2]/p"));
-        SofaData = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[3]/div/div[2]/p"));
-        LactateData = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[4]/div/div[2]/p"));
-
-        MapDelete = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div/div[2]/*[name()=\"svg\"]"));
-        SofaDelete = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[3]/div/div[2]/*[name()=\"svg\"]"));
-        LactateDelete = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[4]/div/div[2]/*[name()=\"svg\"]"));
-    }
-
 
     public void PopupSubmitAndCancel(WebDriver driver) {
         PopupSubmit = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/form/div[2]/div/button[2]"));
         PopupCancel = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/form/div[2]/div/button[1]"));
-    }
-
-    public WebElement getMapAddButton() {
-        return MapAddButton;
-    }
-
-    public WebElement getSofaAddButton() {
-        return SofaAddButton;
-    }
-
-    public WebElement getLactateAddButton() {
-        return LactateAddButton;
-    }
-
-    public WebElement getpMap() {
-        return pMap;
-    }
-
-    public WebElement getSelectFirstCard() {
-        return SelectFirstCard;
-    }
-
-    public WebElement getMaleOrYear(WebDriver driver) {
-        return driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[1]"));
-    }
-
-    public WebElement getFemaleOrMonth(WebDriver driver) {
-        return driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[2]"));
-    }
-
-    public WebElement getAddButton(WebDriver driver) {
-        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/button"));
     }
 
     public WebElement getTime() {
@@ -323,16 +205,64 @@ public class CallWebElement {
         return Unresponsive;
     }
 
+    public WebElement getMPEWorNEWS() {
+        return MPEWorNEWS;
+    }
+
+    public WebElement getInfection() {
+        return Infection;
+    }
+
+    public WebElement getNotInfection() {
+        return NotInfection;
+    }
+
+    public WebElement getPopupSubmit() {
+        return PopupSubmit;
+    }
+
+    public WebElement getPopupCancel() {
+        return PopupCancel;
+    }
+
     public WebElement getSubmit() {
         return Submit;
     }
 
-    public WebElement getPatientStatus() {
-        return PatientStatus;
+    public WebElement getMapAddButton(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div/div/div/p[2]/button"));
     }
 
-    public WebElement getMPEWorNEWS() {
-        return MPEWorNEWS;
+    public WebElement getSofaAddButton(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[3]/div/div/div/p[2]/button"));
+    }
+
+    public WebElement getLactateAddButton(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[4]/div/div/div/p[2]/button"));
+    }
+
+    public WebElement getpMap(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]/div/div/input"));
+    }
+
+    public WebElement getSelectFirstCard(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div[2]/div/div/div/div[1]/div"));
+    }
+
+    public WebElement getMaleOrYear(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[1]"));
+    }
+
+    public WebElement getFemaleOrMonth(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[2]"));
+    }
+
+    public WebElement getAddButton(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/button"));
+    }
+
+    public WebElement getPatientStatus(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div[2]/div/div/div/div/div/div[2]/div/div[7]/p"));
     }
 
     public WebElement getAssessIcon(WebDriver driver) {
@@ -347,28 +277,21 @@ public class CallWebElement {
         return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[1]/div[3]/span/span[1]"));
     }
 
-    public WebElement getInfection() {
-        return Infection;
+    public WebElement getFastTrack(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div[2]/span"));
     }
 
-    public WebElement getNotInfection() {
-        return NotInfection;
+    public WebElement getPatientStatusBar(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[7]/div/div[1]"));
     }
 
-    public WebElement getFastTrack() {
-        return FastTrack;
+    public WebElement getMapInputPopup1(WebDriver driver) {
+        PopupSubmitAndCancel(driver);
+        return driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/form/div[1]/div/div/div[1]/div/input"));
     }
 
-    public WebElement getPatientStatusBar() {
-        return PatientStatusBar;
-    }
-
-    public WebElement getMapInputPopup1() {
-        return MapInputPopup1;
-    }
-
-    public WebElement getMapInputPopup2() {
-        return MapInputPopup2;
+    public WebElement getMapInputPopup2(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/form/div[1]/div/div/div[2]/div/input"));
     }
 
     public WebElement getSofaAndLactateInputPopup(WebDriver driver) {
@@ -376,115 +299,107 @@ public class CallWebElement {
         return driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/form/div[1]/div/div/div/input"));
     }
 
-    public WebElement getPopupSubmit() {
-        return PopupSubmit;
+    public WebElement getMapData(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div/div[2]/p"));
     }
 
-    public WebElement getPopupCancel() {
-        return PopupCancel;
+    public WebElement getMapDelete(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div/div[2]/*[name()=\"svg\"]"));
     }
 
-    public WebElement getMapData() {
-        return MapData;
+    public WebElement getSofaData(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[3]/div/div[2]/p"));
     }
 
-    public WebElement getMapDelete() {
-        return MapDelete;
+    public WebElement getSofaDelete(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[3]/div/div[2]/*[name()=\"svg\"]"));
     }
 
-    public WebElement getSofaData() {
-        return SofaData;
+    public WebElement getLactateData(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[4]/div/div[2]/p"));
     }
 
-    public WebElement getSofaDelete() {
-        return SofaDelete;
+    public WebElement getLactateDelete(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div[4]/div/div[2]/*[name()=\"svg\"]"));
     }
 
-    public WebElement getLactateData() {
-        return LactateData;
+    public WebElement getTreatTime(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[1]/div[2]/p/p/p"));
     }
 
-    public WebElement getLactateDelete() {
-        return LactateDelete;
+    public WebElement getNote(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[7]/div/div/div/textarea[1]"));
     }
 
-    public WebElement getTreatTime() {
-        return TreatTime;
+    public WebElement getSepsis(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[3]/button"));
     }
 
-    public WebElement getNote() {
-        return Note;
+    public WebElement getSepsisShock(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[4]/button"));
     }
 
-    public WebElement getSepsis() {
-        return Sepsis;
+    public WebElement getSepsisInduced(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[5]/button"));
     }
 
-    public WebElement getSepsisShock() {
-        return SepsisShock;
+    public WebElement getCriticalCareNotification(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div/div[6]/button"));
     }
 
-    public WebElement getSepsisInduced() {
-        return SepsisInduced;
+    public WebElement getAntibiotic(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/p[2]/span/span[1]/input"));
     }
 
-    public WebElement getCriticalCareNotification() {
-        return CriticalCareNotification;
+    public WebElement getIVFluid(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/p[2]/span/span[1]/input"));
     }
 
-    public WebElement getAntibiotic() {
-        return Antibiotic;
+    public WebElement getLoadAdequateFluid(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[3]/p[2]/span/span[1]/input"));
     }
 
-    public WebElement getIVFluid() {
-        return IVFluid;
+    public WebElement getVasopressor(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[4]/p[2]/span/span[1]/input"));
     }
 
-    public WebElement getLoadAdequateFluid() {
-        return LoadAdequateFluid;
+    public WebElement getHydrocortisone(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[5]/p[2]/span/span[1]/input"));
     }
 
-    public WebElement getVasopressor() {
-        return Vasopressor;
+    public WebElement getEpinephrine(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/form/div/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[6]/p[2]/span/span[1]/input"));
     }
 
-    public WebElement getHydrocortisone() {
-        return Hydrocortisone;
+    public WebElement getMecritShow(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div[2]/div/div/div/div[1]/div/div[2]/div/div[6]/div"));
     }
 
-    public WebElement getEpinephrine() {
-        return Epinephrine;
-    }
-
-    public WebElement getMecritShow() {
-        return MecritShow;
-    }
-
-    public WebElement getAdmitTimeDisposition() {
-        return AdmitTimeDisposition;
+    public WebElement getAdmitTimeDisposition(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[1]/div/div[1]/span/span[1]/input"));
     }
 
     public WebElement getAdmitTimeChangeDisposition(WebDriver driver) {
         return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[2]/div/div/div/div/input"));
     }
 
-    public WebElement getReferDisposition() {
-        return ReferDisposition;
+    public WebElement getReferDisposition(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[3]/div/div[1]/span/span[1]/input"));
     }
 
     public WebElement getReferChangeDisposition(WebDriver driver) {
         return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[4]/div/div/div/div/input"));
     }
 
-    public WebElement getDischargeDisposition() {
-        return DischargeDisposition;
+    public WebElement getDischargeDisposition(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[5]/div/div[1]/span/span[1]/input"));
     }
 
-    public WebElement getAgainstDisposition() {
-        return AgainstDisposition;
+    public WebElement getAgainstDisposition(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[7]/div/div[1]/span/span[1]/input"));
     }
 
-    public WebElement getDeathDisposition() {
-        return DeathDisposition;
+    public WebElement getDeathDisposition(WebDriver driver) {
+        return driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/main/div/div[2]/div/div/div/div[9]/div/div[1]/span/span[1]/input"));
     }
 }

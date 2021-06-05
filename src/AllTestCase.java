@@ -721,7 +721,6 @@ public class AllTestCase {
         WebDriver driver = new ChromeDriver(Shortcut.options());
         Shortcut.CallChromeDriver(driver, url);
         try {
-
             Shortcut.getFirstCard(driver, call);
 
             String getUrl = driver.getCurrentUrl();
@@ -732,8 +731,7 @@ public class AllTestCase {
                 Thread.sleep(1000);
                 driver.navigate().back();
 
-                call.CallWebElementMainPageAfterCreatedPatient(driver);
-                if (call.getPatientStatus().getText().equals("Waiting for diagnose")) {
+                if (call.getPatientStatus(driver).getText().equals("Waiting for diagnose")) {
                     logger.info("Pass: Status changed to Waiting for diagnose");
                 } else {
                     logger.error("Fail: Status not changed");
@@ -810,9 +808,8 @@ public class AllTestCase {
                 }
 
                 try {
-                    call.CallWebElementDiagnosisPage(driver);
-                    Shortcut.DeleteTextInTextBox(call.getpMap());
-                    if (call.getpMap().getAttribute("value").isEmpty()) {
+                    Shortcut.DeleteTextInTextBox(call.getpMap(driver));
+                    if (call.getpMap(driver).getAttribute("value").isEmpty()) {
                         logger.error("Fail: pMap can edit");
                     }
                 } catch (Exception e) {
@@ -896,8 +893,8 @@ public class AllTestCase {
 
             Shortcut.getFirstCard(driver, call);
 
-            call.CallWebElementEditPage(driver);
             call.getAssessIcon(driver).click();
+
             call.CallWebElementAssessPage(driver);
             if (!call.getTemp().getAttribute("Value").isEmpty()
                     && !call.getPR().getAttribute("Value").isEmpty()
@@ -971,17 +968,12 @@ public class AllTestCase {
 
             Shortcut.DeleteTextInTextBox(call.getHN());
             call.getHN().sendKeys("TestForTestCase19");
-
             call.getGender().click();
-
             call.getFemaleOrMonth(driver).click();
 
-            call.CallWebElementEditPage(driver);
             Shortcut.DeleteTextInTextBox(call.getAge());
             call.getAge().sendKeys("10");
-
             call.getAgeUnit().click();
-
             call.getFemaleOrMonth(driver).click();
 
             call.CallWebElementDiagnosisPage(driver);
@@ -991,15 +983,15 @@ public class AllTestCase {
             Shortcut.DeleteTextInTextBox(call.getBP2());
             call.getBP2().sendKeys("3");
             call.getInfection().click();
-            call.getFastTrack().click();
+            call.getFastTrack(driver).click();
             call.getSubmit().click();
             logger.info("Pass: Edit patient in diagnosis page successfully");
 
             Thread.sleep(1000);
             logger.debug("========= Status color changed to red when activated fast protocol =========");
             driver.navigate().back();
-            call.CallWebElementMainPageAfterCreatedPatient(driver);
-            if (call.getPatientStatusBar().getCssValue("background-color").equals("rgba(255, 94, 94, 1)")) {
+
+            if (call.getPatientStatusBar(driver).getCssValue("background-color").equals("rgba(255, 94, 94, 1)")) {
                 logger.info("Pass: The status bar color changed to red");
             } else {
                 logger.error("Fail: The status bar color not changed to red");
@@ -1007,7 +999,7 @@ public class AllTestCase {
 
             Thread.sleep(1000);
             logger.debug("========= Status changed to 'Waiting for treatment' =========");
-            if (call.getPatientStatus().getText().equals("Waiting for treatment")) {
+            if (call.getPatientStatus(driver).getText().equals("Waiting for treatment")) {
                 logger.info("Pass: Status changed to Waiting for diagnose");
             } else {
                 logger.info("Fail: Status not changed");
@@ -1026,19 +1018,16 @@ public class AllTestCase {
         WebDriver driver = new ChromeDriver(Shortcut.options());
         Shortcut.CallChromeDriver(driver, url);
         try {
-
             Shortcut.getFirstCard(driver, call);
             call.CallWebElementDiagnosisPage(driver);
             call.getSubmit().click();
 
-            call.CallWebElementTreatmentPage(driver);
             String CurrentTime = java.time.LocalTime.now().toString().substring(0, 5);
-            if (call.getTreatTime().getText().equals(CurrentTime)) {
+            if (call.getTreatTime(driver).getText().equals(CurrentTime)) {
                 logger.info("Pass: Current time in the website is match to the real current time");
             } else {
                 logger.error("Fail: Current time in the website is not match to the real current time");
             }
-            call.CallWebElementTreatmentPage(driver);
 
             Shortcut.DriverClose(logger, driver, 20);
         } catch (Exception e) {
@@ -1058,24 +1047,21 @@ public class AllTestCase {
             Shortcut.getFirstCard(driver, call);
 
             logger.debug("========= Add SOFA, Lactate,and MAP, Check the data is negative or not, and Check the data cannot be alphabet =========");
-            call.CallWebElementTreatmentPage(driver);
-            call.getMapAddButton().click();
-
-            call.CallWebElementMapPopup(driver);
+            call.getMapAddButton(driver).click();
 
             logger.debug("========= MAP =========");
 
-            call.getMapInputPopup1().sendKeys("Test");
-            call.getMapInputPopup2().sendKeys("Test");
-            if (Integer.parseInt(call.getMapInputPopup1().getAttribute("Value")) == 0 && Integer.parseInt(call.getMapInputPopup2().getAttribute("Value")) == 0) {
+            call.getMapInputPopup1(driver).sendKeys("Test");
+            call.getMapInputPopup2(driver).sendKeys("Test");
+            if (Integer.parseInt(call.getMapInputPopup1(driver).getAttribute("Value")) == 0 && Integer.parseInt(call.getMapInputPopup2(driver).getAttribute("Value")) == 0) {
                 logger.info("Pass: Map input can be number only");
             } else {
                 logger.error("Fail: Map input can be alphabet");
             }
 
-            call.getMapInputPopup1().sendKeys("-9");
-            call.getMapInputPopup2().sendKeys("-9");
-            if (Integer.parseInt(call.getMapInputPopup1().getAttribute("Value")) > 0 && Integer.parseInt(call.getMapInputPopup2().getAttribute("Value")) > 0) {
+            call.getMapInputPopup1(driver).sendKeys("-9");
+            call.getMapInputPopup2(driver).sendKeys("-9");
+            if (Integer.parseInt(call.getMapInputPopup1(driver).getAttribute("Value")) > 0 && Integer.parseInt(call.getMapInputPopup2(driver).getAttribute("Value")) > 0) {
                 logger.info("Pass: Map input is positive");
             } else {
                 logger.error("Fail: Map input is negative");
@@ -1083,8 +1069,7 @@ public class AllTestCase {
             call.getPopupSubmit().click();
             logger.info("Pass: Add Map successfully");
 
-            call.CallWebElementTreatmentPage(driver);
-            call.getSofaAddButton().click();
+            call.getSofaAddButton(driver).click();
 
             logger.debug("========= Sofa =========");
             Shortcut.DeleteTextInTextBox(call.getSofaAndLactateInputPopup(driver));
@@ -1106,8 +1091,7 @@ public class AllTestCase {
             logger.info("Pass: Add Sofa successfully");
 
             logger.debug("========= Lactate =========");
-            call.CallWebElementTreatmentPage(driver);
-            call.getLactateAddButton().click();
+            call.getLactateAddButton(driver).click();
 
             Shortcut.DeleteTextInTextBox(call.getSofaAndLactateInputPopup(driver));
 
@@ -1129,19 +1113,18 @@ public class AllTestCase {
 
             Thread.sleep(1000);
             logger.debug("========= Show MAP, Lactate, and Sofa value =========");
-            call.CallWebElementTreatmentPageAfterAddData(driver);
             try {
-                logger.info("Pass: Map data is - " + call.getMapData().getText());
+                logger.info("Pass: Map data is - " + call.getMapData(driver).getText());
             } catch (Exception e) {
                 logger.error("Fail: Map data not found");
             }
             try {
-                logger.info("Pass: Sofa data is - " + call.getSofaData().getText());
+                logger.info("Pass: Sofa data is - " + call.getSofaData(driver).getText());
             } catch (Exception e) {
                 logger.error("Fail: Sofa data not found");
             }
             try {
-                logger.info("Pass: Lactate data is - " + call.getLactateData().getText());
+                logger.info("Pass: Lactate data is - " + call.getLactateData(driver).getText());
             } catch (Exception e) {
                 logger.error("Fail: Lactate data not found");
             }
@@ -1150,21 +1133,21 @@ public class AllTestCase {
             logger.debug("========= Delete MAP, Lactate, and Sofa =========");
             Actions a = new Actions(driver);
             try {
-                a.moveToElement(call.getMapDelete()).click().build().perform();
+                a.moveToElement(call.getMapDelete(driver)).click().build().perform();
                 logger.info("Pass: Map data deleted");
             } catch (Exception e) {
                 logger.error("Fail: Map data not found or cannot delete");
             }
 
             try {
-                a.moveToElement(call.getSofaDelete()).click().build().perform();
+                a.moveToElement(call.getSofaDelete(driver)).click().build().perform();
                 logger.info("Pass: Sofa data deleted");
             } catch (Exception e) {
                 logger.error("Fail: Lactate data not found or cannot delete");
             }
 
             try {
-                a.moveToElement(call.getLactateDelete()).click().build().perform();
+                a.moveToElement(call.getLactateDelete(driver)).click().build().perform();
                 logger.info("Pass: Lactate data deleted");
             } catch (Exception e) {
                 logger.error("Fail: Lactate data not found or cannot delete");
@@ -1191,8 +1174,8 @@ public class AllTestCase {
             call.getSubmit().click();
 
             Thread.sleep(1000);
-            call.CallWebElementMainPageAfterCreatedPatient(driver);
-            if (call.getPatientStatus().getText().equals("Waiting for archive")) {
+
+            if (call.getPatientStatus(driver).getText().equals("Waiting for archive")) {
                 logger.info("Pass: Status changed to Waiting for archive");
             } else {
                 logger.info("Fail: Status not changed");
@@ -1252,9 +1235,8 @@ public class AllTestCase {
 
             Shortcut.getFirstCard(driver, call);
 
-            call.CallWebElementTreatmentPage(driver);
-            call.getNote().sendKeys("TestTestTestTestTest123456789");
-            if (call.getNote().getText().isEmpty()) {
+            call.getNote(driver).sendKeys("TestTestTestTestTest123456789");
+            if (call.getNote(driver).getText().isEmpty()) {
                 logger.error("Fail: Cannot type note");
             } else {
                 logger.info("Pass: Can type note");
@@ -1277,7 +1259,6 @@ public class AllTestCase {
             Shortcut.getFirstCard(driver, call);
             logger.debug("========= Click assess icon it will bring you back to assess page =========");
 
-            call.CallWebElementEditPage(driver);
             call.getAssessIcon(driver).click();
             call.CallWebElementAssessPage(driver);
             if (!call.getTemp().getAttribute("Value").isEmpty()
@@ -1294,12 +1275,11 @@ public class AllTestCase {
             }
             logger.debug("========= Click treat icon it will bring you back to treat page =========");
 
-            call.CallWebElementEditPage(driver);
             call.getTreatmentIcon(driver).click();
             call.CallWebElementTreatmentPage(driver);
-            if (call.getMapAddButton().isDisplayed()
-                    && call.getSofaAddButton().isDisplayed()
-                    && call.getLactateAddButton().isDisplayed()
+            if (call.getMapAddButton(driver).isDisplayed()
+                    && call.getSofaAddButton(driver).isDisplayed()
+                    && call.getLactateAddButton(driver).isDisplayed()
                     && call.getInfection().isDisplayed()
                     && call.getNotInfection().isDisplayed()) {
                 logger.info("Pass: When click treat icon it will bring you back to treat page");
@@ -1336,11 +1316,9 @@ public class AllTestCase {
             call.getGender().click();
             call.getFemaleOrMonth(driver).click();
 
-            call.CallWebElementEditPage(driver);
             call.getAgeUnit().click();
             call.getFemaleOrMonth(driver).click();
 
-            call.CallWebElementEditPage(driver);
             Shortcut.DeleteTextInTextBox(call.getAge());
             call.getAge().sendKeys("12");
 
@@ -1363,14 +1341,13 @@ public class AllTestCase {
 
             Shortcut.getFirstCard(driver, call);
 
-            call.CallWebElementTreatmentPage(driver);
-            call.getSepsis().click();
-            System.out.println(call.getSepsis().getAttribute("class"));
-            System.out.println(call.getSepsisShock().getAttribute("class"));
+            call.getSepsis(driver).click();
+            System.out.println(call.getSepsis(driver).getAttribute("class"));
+            System.out.println(call.getSepsisShock(driver).getAttribute("class"));
 
-            if (call.getSepsis().getAttribute("class").equals(Selected)
-                    && call.getSepsisShock().getAttribute("class").equals(NotSelected)
-                    && call.getSepsisInduced().getAttribute("class").equals(NotSelected)) {
+            if (call.getSepsis(driver).getAttribute("class").equals(Selected)
+                    && call.getSepsisShock(driver).getAttribute("class").equals(NotSelected)
+                    && call.getSepsisInduced(driver).getAttribute("class").equals(NotSelected)) {
                 logger.info("Pass: When click button choice can choose only one");
             } else {
                 logger.error("Fail: When click button choice can choose more than one");
@@ -1378,10 +1355,10 @@ public class AllTestCase {
 
             Thread.sleep(2000);
 
-            call.getSepsisShock().click();
-            if (call.getSepsis().getAttribute("class").equals(NotSelected)
-                    && call.getSepsisShock().getAttribute("class").equals(Selected)
-                    && call.getSepsisInduced().getAttribute("class").equals(NotSelected)) {
+            call.getSepsisShock(driver).click();
+            if (call.getSepsis(driver).getAttribute("class").equals(NotSelected)
+                    && call.getSepsisShock(driver).getAttribute("class").equals(Selected)
+                    && call.getSepsisInduced(driver).getAttribute("class").equals(NotSelected)) {
                 logger.info("Pass: When click button choice can choose only one");
             } else {
                 logger.error("Fail: When click button choice can choose more than one");
@@ -1389,10 +1366,10 @@ public class AllTestCase {
 
             Thread.sleep(2000);
 
-            call.getSepsisInduced().click();
-            if (call.getSepsis().getAttribute("class").equals(NotSelected)
-                    && call.getSepsisShock().getAttribute("class").equals(NotSelected)
-                    && call.getSepsisInduced().getAttribute("class").equals(Selected)) {
+            call.getSepsisInduced(driver).click();
+            if (call.getSepsis(driver).getAttribute("class").equals(NotSelected)
+                    && call.getSepsisShock(driver).getAttribute("class").equals(NotSelected)
+                    && call.getSepsisInduced(driver).getAttribute("class").equals(Selected)) {
                 logger.info("Pass: When click button choice can choose only one");
             } else {
                 logger.error("Fail: When click button choice can choose more than one");
@@ -1415,12 +1392,12 @@ public class AllTestCase {
 
             Shortcut.getFirstCard(driver, call);
 
+            call.getCriticalCareNotification(driver).click();
             call.CallWebElementTreatmentPage(driver);
-            call.getCriticalCareNotification().click();
             call.getSubmit().click();
 
-            call.CallWebElementMainPageAfterCreatedPatient(driver);
-            if (call.getMecritShow().getText().equals("Mecrit Notified")) {
+
+            if (call.getMecritShow(driver).getText().equals("Mecrit Notified")) {
                 logger.info("Pass: Mecrit Notified is show now");
             } else {
                 logger.error("Fail: Mecrit Notified is not show");
